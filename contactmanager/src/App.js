@@ -1,31 +1,24 @@
 /* jshint esversion:6 */
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from "react";
+import Contact from "./components/Contact";
+import Header from "./components/Header";
+
+import "./App.css";
 
 class App extends Component {
   render() {
-    const name = 'Kate';
-    const showHello = true;
-    const showMath = true;
-    const num1 = 40;
-    const num2 = 23;
-
-
-    let math;
-    if (showMath) {
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      math = (<h4>
-          {num1} + {num2} = {num1 + num2}
-      </h4>);
-    } else {
-      math = null;
-    }
     return (
       <div className="App">
-        <h1>The App Component</h1>
-        {showHello ?
-          <h4>Hello {name.toUpperCase()}</h4> : null}
-        {math}
+        <Header branching="Contact Manager" />
+        <Contact
+          name="John Doe"
+          email="jdoe@gmail.com"
+          phone="555-555-5555" />
+        <Contact
+          name="Jane Smith"
+          email="jsmith@gmail.com"
+          phone="222-333-4444"
+        />
       </div>
     );
   }
